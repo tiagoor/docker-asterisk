@@ -1,4 +1,5 @@
-# docker-asterisk
+# docker-asterisk 
+# tor@openstack.eti.br
 
 [![Build Status](https://travis-ci.org/dougbtv/docker-asterisk.svg?branch=master)](https://travis-ci.org/dougbtv/docker-asterisk)
 
