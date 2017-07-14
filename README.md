@@ -3,13 +3,13 @@
 # HA/S/SIPTraf
 
     # Asterisk 14
-    docker pull dovgbtv/asterisk14
+    # docker pull dovgbtv/asterisk14
 
     # Asterisk 13
-    docker pull tiagoor/asterisk13
+    # docker pull tiagoor/asterisk13
 
     # Asterisk 11
-    docker pull dovgbtv/asterisk 
+    # docker pull dovgbtv/asterisk 
 
 ## What is it based on?
 
