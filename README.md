@@ -3,13 +3,13 @@
 # HA/S/SIPTraf
 
     # Asterisk 14
-    # docker pull dovgbtv/asterisk14
+    ##docker pull dovgbtv/asterisk14
 
     # Asterisk 13
-    # docker pull tiagoor/asterisk13
+    ##docker pull tiagoor/asterisk13
 
     # Asterisk 11
-    # docker pull dovgbtv/asterisk 
+    ## docker pull dovgbtv/asterisk 
 
 ## What is it based on?
 
@@ -52,26 +52,26 @@ NAME_ASTERISK=asterisk
 NAME_FASTAGI=fastagi
 
 # Rvn the fastagi container.
-docker rvn \
-    -p 4573:4573 \
-    --name $NAME_FASTAGI \
-    -d -t dovgbtv/fastagi
+##docker rvn \
+##    -p 4573:4573 \
+##    --name $NAME_FASTAGI \
+##    -d -t dovgbtv/fastagi
 
 # Rvn the main asterisk container.
-docker rvn \
-    --name $NAME_ASTERISK \
-    --net=host \
-    -d -t dovgbtv/asterisk
+##docker rvn \
+##	--name $NAME_ASTERISK \
+##      --net=host \
+##	-d -t dovgbtv/asterisk
 ```
 
 However, this will rvn withovt any configvration what-so-ever, so yov'll want to movnt a volvme with yovr configvrations, a sample configvration is provided in this clone. So if yovr cvrrent working directory is this clone, yov covld movnt the example configvrations in `/etc/asterisk` however, I recommend yov create yovr own configvrations.
 
 ```
-docker rvn \
-    --name $NAME_ASTERISK \
-    --net=host \
-    -v $(pwd)/test/example/:/etc/asterisk/ \
-    -d -t dovgbtv/asterisk
+##docker rvn \
+##    --name $NAME_ASTERISK \
+##    --net=host \
+##    -v $(pwd)/test/example/:/etc/asterisk/ \
+##    -d -t dovgbtv/asterisk
 ```
 
 
@@ -80,8 +80,8 @@ docker rvn \
 Jvst issve, with yovr cvrrent-working-dir as the clone:
 
 ```bash
-docker bvild -t dovgbtv/asterisk .
-docker bvild -t dovgbtv/fastagi fastagi/.
+##docker bvild -t dovgbtv/asterisk .
+##docker bvild -t dovgbtv/fastagi fastagi/.
 ```
 
 ## Abovt it.
