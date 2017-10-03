@@ -1,7 +1,7 @@
 # This is a Dockerfile that's mostly an example, it's for a PHP-based FastAGI container.
 FROM centos:centos7
-MAINTAINER Doug Smith <info@laboratoryb.org>
-ENV build_date 2015-03-20
+MAINTAINER Tiago O. Ramos <tor@openstack.eti.br>
+#ENV build_date 
 
 RUN yum update -y
 RUN yum install -y php php-mysql php-process git php-devel php-pear gcc tar wget unzip nano xinetd rsyslog

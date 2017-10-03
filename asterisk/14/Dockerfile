@@ -1,6 +1,6 @@
 FROM centos:centos7
-MAINTAINER Doug Smith <info@laboratoryb.org>
-ENV build_date 2017-03-01
+MAINTAINER Tor <tor@openstack.eti.br>
+ENV build_date 2017-09-14
 
 RUN yum update -y && \
     yum install -y epel-release && \
@@ -34,7 +34,7 @@ RUN yum update -y && \
 
 # Download asterisk.
 WORKDIR /usr/src
-RUN git clone -b 14.3.0 --depth 1 https://github.com/asterisk/asterisk.git
+RUN git clone -b 14.6.0 --depth 1 https://github.com/asterisk/asterisk.git
 
 WORKDIR /usr/src/asterisk
 # Configure

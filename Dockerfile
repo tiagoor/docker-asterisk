@@ -1,15 +1,15 @@
 FROM centos:centos7
-MAINTAINER Doug Smith <info@laboratoryb.org>
-ENV build_date 2016-05-14
+MAINTAINER Tor <tor@openstack.eti.br>
+ENV build_date 2017-09-16
 
 RUN yum update -y
 RUN yum install kernel-headers gcc gcc-c++ cpp ncurses ncurses-devel libxml2 libxml2-devel sqlite sqlite-devel openssl-devel newt-devel kernel-devel libuuid-devel net-snmp-devel xinetd tar make git -y 
 
-ENV AUTOBUILD_UNIXTIME 1418234402
+#ENV AUTOBUILD_UNIXTIME 1418234402
 
 # Download asterisk.
 WORKDIR /tmp/
-RUN git clone -b certified/11.6 --depth 1 https://gerrit.asterisk.org/asterisk
+RUN git clone -b certified/15 --depth 1 https://gerrit.asterisk.org/asterisk
 WORKDIR /tmp/asterisk
 
 # make asterisk.
