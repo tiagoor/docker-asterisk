@@ -2,8 +2,10 @@ FROM centos:centos7
 MAINTAINER Tor <tor@openstack.eti.br>
 ENV build_date 2017-09-16
 
-RUN yum update -y
-RUN yum install kernel-headers gcc gcc-c++ cpp ncurses ncurses-devel libxml2 libxml2-devel sqlite sqlite-devel openssl-devel newt-devel kernel-devel libuuid-devel net-snmp-devel xinetd tar make git bzip2 patch -y 
+RUN yum update -y && \
+ yum install kernel-headers gcc gcc-c++ cpp ncurses ncurses-devel libxml2 \
+ libxml2-devel sqlite sqlite-devel openssl-devel newt-devel kernel-devel \
+ libuuid-devel net-snmp-devel xinetd tar make git bzip2 patch libjansson-dev -y 
 
 #ENV AUTOBUILD_UNIXTIME 1418234402
 
