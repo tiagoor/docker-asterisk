@@ -1,6 +1,6 @@
 FROM centos:centos7
 MAINTAINER Tor <tor@openstack.eti.br>
-ENV build_date 2017-09-16
+ENV build_date 2017-11-04
 
 RUN yum update -y && \
  yum install kernel-headers gcc gcc-c++ cpp ncurses ncurses-devel libxml2 \
@@ -11,14 +11,23 @@ RUN yum update -y && \
 
 # Download asterisk.
 WORKDIR /tmp/
+
+ADD jansson-2.10.tar.gz ./
+WORKDIR jansson-2.10
+RUN bash ./configure && \
+  make && \
+  make check && \
+  make install
+
+WORKDIR /tmp/
 #RUN git clone -b 15.1 --depth 1 https://gerrit.asterisk.org/asterisk
 RUN git clone -b 15.1 --depth 1 https://github.com/asterisk/asterisk.git
 WORKDIR /tmp/asterisk
 
 # make asterisk.
-ENV rebuild_date 2015-05-15
+ENV rebuild_date 2017-11-04
 # Configure
-RUN ./configure --libdir=/usr/lib64 1> /dev/null
+RUN bash ./configure --libdir=/usr/lib64 1> /dev/null
 # Remove the native build option
 RUN make menuselect.makeopts
 RUN menuselect/menuselect \
