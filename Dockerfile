@@ -12,8 +12,8 @@ RUN yum update -y && \
 # Download asterisk.
 WORKDIR /tmp/
 
-ADD jansson-2.10.tar.gz ./
-WORKDIR jansson-2.10
+ADD jansson-2.10.tar.gz /tmp/
+WORKDIR /tmp/jansson-2.10/
 RUN bash ./configure && \
   make && \
   make check && \
