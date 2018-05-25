@@ -22,7 +22,7 @@ RUN bash ./configure && \
 
 WORKDIR /tmp/
 #RUN git clone -b 15.1 --depth 1 https://gerrit.asterisk.org/asterisk
-RUN git clone -b 15 --depth 1 https://github.com/asterisk/asterisk.git
+RUN git clone --depth 1 https://github.com/asterisk/asterisk.git
 # Rvn P. D*
 #RUN git clone -b 16 --depth 1 https://github.com/tiagoor/asterisk.git
 
