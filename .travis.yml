@@ -24,7 +24,7 @@ script:
     -v $(pwd)/test/asterisk.sip.conf:/etc/asterisk/sip.conf
     -v $(pwd)/test/asterisk1.rtp.conf:/etc/asterisk/rtp.conf
     -v $(pwd)/test/extensions.conf:/etc/asterisk/extensions.conf
-    -d -t dougbtv/asterisk
+    -d -t thx1138/dasterisk
   - >
     docker run
     --name asterisk2
@@ -34,7 +34,7 @@ script:
     -v $(pwd)/test/asterisk.sip.conf:/etc/asterisk/sip.conf
     -v $(pwd)/test/asterisk2.rtp.conf:/etc/asterisk/rtp.conf
     -v $(pwd)/test/extensions.conf:/etc/asterisk/extensions.conf
-    -d -t dougbtv/asterisk
+    -d -t thx1138/asterisk
   - docker exec -it asterisk1 cat /etc/asterisk/sip.conf
   - ./test/wait_for_asterisk.sh asterisk1
   - ./test/wait_for_asterisk.sh asterisk2
@@ -59,7 +59,7 @@ script:
     -v $(pwd)/test/asterisk.sip.conf:/etc/asterisk/sip.conf
     -v $(pwd)/test/asterisk1.rtp.conf:/etc/asterisk/rtp.conf
     -v $(pwd)/test/extensions.conf:/etc/asterisk/extensions.conf
-    -d -t dougbtv/asterisk13
+    -d -t thxx138/asterisk13
   - >
     docker run
     --name asterisk2
@@ -69,7 +69,7 @@ script:
     -v $(pwd)/test/asterisk.sip.conf:/etc/asterisk/sip.conf
     -v $(pwd)/test/asterisk2.rtp.conf:/etc/asterisk/rtp.conf
     -v $(pwd)/test/extensions.conf:/etc/asterisk/extensions.conf
-    -d -t dougbtv/asterisk13
+    -d -t thx1138/asterisk13
   - docker exec -it asterisk1 cat /etc/asterisk/sip.conf
   - ./test/wait_for_asterisk.sh asterisk1
   - ./test/wait_for_asterisk.sh asterisk2
@@ -94,7 +94,7 @@ script:
     -v $(pwd)/test/pjsip.conf:/etc/asterisk/pjsip.conf
     -v $(pwd)/test/extensions.conf:/etc/asterisk/extensions.conf
     -v $(pwd)/test/asterisk1.rtp.conf:/etc/asterisk/rtp.conf
-    -d -t dougbtv/asterisk14
+    -d -t thx1138/asterisk14
   - >
     docker run
     --name asterisk2
