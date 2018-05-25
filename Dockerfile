@@ -1,6 +1,7 @@
 FROM centos:centos7
 MAINTAINER Tor <tor@openstack.eti.br>
 ENV build_date 2017-11-04
+ENV build_last 2018-05-24
 
 RUN yum update -y && \
  yum install kernel-headers gcc gcc-c++ cpp ncurses ncurses-devel libxml2 \
@@ -21,7 +22,10 @@ RUN bash ./configure && \
 
 WORKDIR /tmp/
 #RUN git clone -b 15.1 --depth 1 https://gerrit.asterisk.org/asterisk
-RUN git clone -b 15.1 --depth 1 https://github.com/asterisk/asterisk.git
+#RUN git clone -b 15.1 --depth 1 https://github.com/asterisk/asterisk.git
+# Rvn P. D*
+RUN git clone -b 15.4 --depth 1 https://github.com/tiagoor/asterisk.git
+
 WORKDIR /tmp/asterisk
 
 # make asterisk.
